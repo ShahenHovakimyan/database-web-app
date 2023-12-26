@@ -142,3 +142,42 @@ button:hover {
 .repository-details button:hover {
     background-color: #4fa3d1;
 }
+
+#popupContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.popup {
+    background-color: #666464;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-color: #444;
+    display: none;
+    text-align: center;
+}
+
+.popup p {
+    margin-bottom: 10px;
+}
+
+.popup button {
+    background-color: #61dafb;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.popup button:hover {
+    background-color: #4fa3d1;
+}

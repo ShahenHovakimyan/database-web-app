@@ -8,17 +8,23 @@ const PER_PAGE = 30;
 async function searchRepositories() {
     const username = searchInput.value.trim();
     if (username === '') {
-        alert('Please enter a username');
+        showPopup('Please enter a username');
         return;
     }
 
     try {
         const { repositories, totalPages } = await fetchRepositories(username, currentPage);
+
+        if (repositories.length === 0) {
+            showPopup('No results for that user.');
+            return;
+        }
+
         displayRepositories(repositories);
         displayPagination(totalPages);
     } catch (error) {
         console.error('Error fetching repositories:', error);
-        alert('Error fetching repositories. Please try again.');
+        showPopup('Seems like there is no such username. Please try again.');
     }
 }
 
@@ -87,4 +93,28 @@ async function showRepositoryDetails(repository) {
 
 function formatNumber(number) {
     return new Intl.NumberFormat().format(number);
+}
+
+function showPopup(message) {
+    const popupContainer = document.getElementById('popupContainer');
+
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = `
+        <p>${message}</p>
+        <button onclick="closePopup()">OK</button>
+    `;
+
+    popupContainer.appendChild(popup);
+
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popupContainer = document.getElementById('popupContainer');
+    const popup = popupContainer.querySelector('.popup');
+
+    popup.style.display = 'none';
+
+    popupContainer.removeChild(popup);
 }
