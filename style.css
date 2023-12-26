@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4fa3d1;
+}
+
+#resultsContainer {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pagination button:hover {
+    background-color: #4fa3d1;
+    transform: scale(1.1);
+}
+
+.pagination button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.pagination button:not(:disabled) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.repository-row {
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.repository-row:hover {
+    background-color: #f0f0f0;
+}
+
+.repository-row img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.repository-row span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.repository-details {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+.repository-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.repository-details p {
+    margin-bottom: 15px;
+}
+
+.repository-details button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.repository-details button.centered {
+    display: block;
+    margin: 0 auto;
+}
+
+.repository-details button:hover {
+    background-color: #4fa3d1;
+}
