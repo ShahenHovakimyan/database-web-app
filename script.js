@@ -5,6 +5,12 @@ let currentPage = 1;
 const GITHUB_API = 'https://api.github.com';
 const PER_PAGE = 30;
 
+searchInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        searchRepositories();
+    }
+});
+
 async function searchRepositories() {
     const username = searchInput.value.trim();
     if (username === '') {
