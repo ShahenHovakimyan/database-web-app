@@ -76,7 +76,7 @@ function handlePaginationClick(page) {
 }
 
 async function showRepositoryDetails(repository) {
-    const apiUrl = `/repos/${repository.owner.login}/${repository.name}`;
+    const apiUrl = `${GITHUB_API}/repos/${repository.owner.login}/${repository.name}`;
     const response = await fetch(apiUrl);
     const data = await response.json();
 
